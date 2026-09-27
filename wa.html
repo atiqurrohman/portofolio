@@ -1,108 +1,283 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hubungi Saya di WhatsApp</title>
-<style>
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: system-ui, sans-serif;
-}
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>WhatsApp - Atiqur Rahman</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:
+                "Segoe UI",
+                Tahoma,
+                Geneva,
+                Verdana,
+                sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(37, 211, 102, 0.20),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(14, 165, 233, 0.20),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #020617,
+                    #071426,
+                    #0b1120,
+                    #071f17
+                );
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(
+                    rgba(37, 211, 102, 0.035) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(37, 211, 102, 0.035) 1px,
+                    transparent 1px
+                );
+            background-size: 45px 45px;
+            pointer-events: none;
+        }
+        .card {
+            width: 100%;
+            max-width: 500px;
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 30px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(15, 23, 42, 0.85),
+                    rgba(15, 23, 42, 0.65)
+                );
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            box-shadow:
+                0 30px 80px
+                rgba(0, 0, 0, 0.55),
+                0 0 50px
+                rgba(37, 211, 102, 0.08);
+            animation:
+                muncul 0.8s ease;
+        }
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform:
+                    translateY(30px)
+                    scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+        .whatsapp-icon {
+            width: 100px;
+            height: 100px;
+            margin:
+                0 auto 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #25d366,
+                    #128c7e
+                );
+            box-shadow:
+                0 0 25px
+                rgba(37, 211, 102, 0.45),
+                0 0 60px
+                rgba(37, 211, 102, 0.15);
+            animation:
+                mengambang 3s ease-in-out infinite;
 
-body{
-    background: linear-gradient(45deg, #4158D0, #C850C0, #FFCC70, #25D366);
-    background-size: 400% 400%;
-    animation: warnaBergerak 8s ease infinite;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-@keyframes warnaBergerak{
-    0%{background-position: 0% 50%;}
-    50%{background-position: 100% 50%;}
-    100%{background-position: 0% 50%;}
-}
-
-.kotak{
-    background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(12px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 24px;
-    padding: 50px 35px;
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-    color: white;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-}
-
-.ikon{
-    font-size: 70px;
-    margin-bottom: 15px;
-}
-
-h1{
-    font-size: 26px;
-    margin-bottom: 10px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.deskripsi{
-    font-size: 16px;
-    opacity: 0.9;
-    margin-bottom: 35px;
-    line-height: 1.6;
-}
-
-.tombol{
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: #25D366;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 16px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
-    transition: all 0.3s ease;
-}
-
-.tombol:hover{
-    transform: scale(1.08);
-    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
-    background: #20bd5a;
-}
-
-.nomor{
-    margin-top: 30px;
-    font-size: 14px;
-    opacity: 0.8;
-}
-</style>
+        }
+        @keyframes mengambang {
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
+            50% {
+                transform:
+                    translateY(-8px);
+            }
+        }
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            background:
+                linear-gradient(
+                    90deg,
+                    #25d366,
+                    #67e8f9
+                );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .deskripsi {
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        .info {
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            background:
+                rgba(37, 211, 102, 0.07);
+            border:
+                1px solid
+                rgba(37, 211, 102, 0.15);
+            color: #d1fae5;
+        }
+        .btn-whatsapp {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: bold;
+            background:
+                linear-gradient(
+                    135deg,
+                    #25d366,
+                    #128c7e
+                );
+            box-shadow:
+                0 10px 25px
+                rgba(37, 211, 102, 0.25);
+            transition:
+                0.3s ease;
+        }
+        .btn-whatsapp:hover {
+            transform:
+                translateY(-5px)
+                scale(1.02);
+            box-shadow:
+                0 15px 35px
+                rgba(37, 211, 102, 0.40);
+        }
+        .kembali {
+            display: inline-block;
+            margin-top: 18px;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .kembali:hover {
+            color: #38bdf8;
+        }
+        footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top:
+                1px solid
+                rgba(255, 255, 255, 0.08);
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 500px) {
+            .card {
+                padding:
+                    30px 20px;
+                border-radius:
+                    22px;
+            }
+            .whatsapp-icon {
+                width: 85px;
+                height: 85px;
+                font-size: 42px;
+            }
+            h1 {
+                font-size:
+                    1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div class="kotak">
-    <div class="ikon">💬</div>
-    <h1>Ayo Ngobrol! ✨</h1>
-    <p class="deskripsi">Siap bantu kapan saja<br>Klik tombol hijau di bawah 👇</p>
-
-    <!-- GANTI NOMOR DI SINI YA -->
-    <a href="https://wa.me/6281234567890?text=Halo!%20Saya%20dari%20web%20ingin%20bertanya" 
-       target="_blank" class="tombol">
-        🟢 Chat WhatsApp
-    </a>
-
-    <p class="nomor">📞 +62 878-1977-7046</p>
-</div>
-
+    <div class="card">
+        <!-- ICON -->
+        <div class="whatsapp-icon">
+            💬
+        </div>
+        <!-- JUDUL -->
+        <h1>
+            Hubungi Saya
+        </h1>
+        <!-- DESKRIPSI -->
+        <p class="deskripsi">
+            Jika ingin menghubungi saya,
+            silakan klik tombol WhatsApp
+            di bawah ini.
+        </p>
+        <!-- INFO -->
+        <div class="info">
+            📱 WhatsApp
+            <br>
+            <strong>
+                Atiqur Rahman
+            </strong>
+        </div>
+        <a
+            href="https://wa.me/62819777046"
+            class="btn-whatsapp"
+            target="_blank"
+        >
+            💬 Chat melalui WhatsApp
+        </a>
+        <!-- KEMBALI -->
+        <a
+            href="index.html"
+            class="kembali"
+        >
+            ← Kembali ke Portfolio
+        </a>
+        <!-- FOOTER -->
+        <footer>
+            © 2026 Atiqur Rahman
+        </footer>
+    </div>
 </body>
 </html>
