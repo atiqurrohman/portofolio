@@ -1,107 +1,370 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ikuti Saya di Instagram</title>
-<style>
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: system-ui, sans-serif;
-}
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>Instagram - Atiqur Rahman</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:
+                "Segoe UI",
+                Tahoma,
+                Geneva,
+                Verdana,
+                sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+            overflow: hidden;
+            position: relative;
+            background:
+                radial-gradient(
+                    circle at 10% 15%,
+                    rgba(245, 133, 41, 0.25),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(221, 42, 123, 0.25),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(129, 52, 175, 0.25),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #020617,
+                    #170b25,
+                    #20091c,
+                    #0f172a
+                );
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(
+                    rgba(236, 72, 153, 0.035) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(236, 72, 153, 0.035) 1px,
+                    transparent 1px
+                );
+            background-size: 45px 45px;
+            pointer-events: none;
+        }
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            top: -180px;
+            right: -150px;
+            border-radius: 50%;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(221, 42, 123, 0.25),
+                    rgba(129, 52, 175, 0.10),
+                    transparent 70%
+                );
+            filter: blur(30px);
+            animation:
+                glowGerak 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes glowGerak {
+            0% {
+                transform:
+                    translate(0, 0)
+                    scale(1);
+            }
+            50% {
+                transform:
+                    translate(-100px, 100px)
+                    scale(1.2);
 
-body{
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    background-size: 400% 400%;
-    animation: gradienBergerak 8s ease infinite;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-@keyframes gradienBergerak{
-    0%{background-position: 0% 50%;}
-    50%{background-position: 100% 50%;}
-    100%{background-position: 0% 50%;}
-}
-
-.kotak{
-    background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(12px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 24px;
-    padding: 50px 35px;
-    text-align: center;
-    max-width: 400px;
-    width: 100%;
-    color: white;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-}
-
-.ikon{
-    font-size: 70px;
-    margin-bottom: 15px;
-}
-
-h1{
-    font-size: 26px;
-    margin-bottom: 10px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.deskripsi{
-    font-size: 16px;
-    opacity: 0.9;
-    margin-bottom: 35px;
-    line-height: 1.6;
-}
-
-.tombol{
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: white;
-    color: #E4405F;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 16px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-}
-
-.tombol:hover{
-    transform: scale(1.08);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-    background: #f8f8f8;
-}
-
-.akun{
-    margin-top: 30px;
-    font-size: 15px;
-    opacity: 0.9;
-}
-</style>
+            }
+            100% {
+                transform:
+                    translate(0, 0)
+                    scale(1);
+            }
+        }
+        .card {
+            width: 100%;
+            max-width: 500px;
+            padding: 40px 30px;
+            text-align: center;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(15, 23, 42, 0.88),
+                    rgba(30, 15, 35, 0.72)
+                );
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.13);
+            border-radius: 30px;
+            backdrop-filter: blur(25px);
+            box-shadow:
+                0 30px 80px
+                rgba(0, 0, 0, 0.55),
+                0 0 60px
+                rgba(221, 42, 123, 0.10);
+            position: relative;
+            overflow: hidden;
+            animation:
+                muncul 0.8s ease;
+        }
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 10%;
+            width: 80%;
+            height: 2px;
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #f58529,
+                    #dd2a7b,
+                    #8134af,
+                    transparent
+                );
+            box-shadow:
+                0 0 15px #dd2a7b,
+                0 0 30px #8134af;
+        }
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform:
+                    translateY(30px)
+                    scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+        .instagram-icon {
+            width: 110px;
+            height: 110px;
+            margin:
+                0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            font-size: 55px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #feda75,
+                    #fa7e1e,
+                    #d62976,
+                    #962fbf,
+                    #4f5bd5
+                );
+            box-shadow:
+                0 0 25px
+                rgba(221, 42, 123, 0.45),
+                0 0 60px
+                rgba(129, 52, 175, 0.20);
+            animation:
+                mengambang 3s ease-in-out infinite;
+        }
+        @keyframes mengambang {
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
+            50% {
+                transform:
+                    translateY(-8px);
+            }
+        }
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            background:
+                linear-gradient(
+                    90deg,
+                    #feda75,
+                    #fa7e1e,
+                    #dd2a7b,
+                    #a855f7
+                );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .deskripsi {
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        .info {
+            padding: 18px;
+            margin-bottom: 25px;
+            border-radius: 18px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(245, 133, 41, 0.08),
+                    rgba(221, 42, 123, 0.08),
+                    rgba(129, 52, 175, 0.08)
+                );
+            border:
+                1px solid
+                rgba(221, 42, 123, 0.20);
+            color: #fce7f3;
+        }
+        .username {
+            display: inline-block;
+            margin-top: 5px;
+            color: #f472b6;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .btn-instagram {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: bold;
+            background:
+                linear-gradient(
+                    135deg,
+                    #f58529,
+                    #dd2a7b,
+                    #8134af
+                );
+            box-shadow:
+                0 10px 25px
+                rgba(221, 42, 123, 0.25);
+            transition:
+                0.3s ease;
+        }
+        .btn-instagram:hover {
+            transform:
+                translateY(-5px)
+                scale(1.02);
+            box-shadow:
+                0 15px 35px
+                rgba(221, 42, 123, 0.40);
+        }
+        .kembali {
+            display: inline-block;
+            margin-top: 18px;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .kembali:hover {
+            color: #f472b6;
+        }
+        footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top:
+                1px solid
+                rgba(255, 255, 255, 0.08);
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 500px) {
+            .card {
+                padding:
+                    30px 20px;
+                border-radius:
+                    22px;
+            }
+            .instagram-icon {
+                width: 90px;
+                height: 90px;
+                font-size: 45px;
+                border-radius: 25px;
+            }
+            h1 {
+                font-size:
+                    1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<div class="kotak">
-    <div class="ikon">📸</div>
-    <h1>Ikuti Saya! ✨</h1>
-    <p class="deskripsi">Lihat foto-foto & kegiatan saya<br>Klik tombol di bawah ya 👇</p>
-
-    <!-- GANTI NAMA AKUN DI SINI -->
-    <a href="https://www.instagram.com/atiqurrohman401?stkn=aGtlZ2Jqd3Azam54" target="_blank" class="tombol">
-        📷 Buka Instagram
-    </a>
-
-    <p class="akun">atiqurrohman401</p>
-</div>
-
+    <div class="card">
+        <!-- ICON INSTAGRAM -->
+        <div class="instagram-icon">
+            📸
+        </div>
+        <!-- JUDUL -->
+        <h1>
+            Instagram Saya
+        </h1>
+        <!-- DESKRIPSI -->
+        <p class="deskripsi">
+            Yuk, ikuti dan lihat aktivitas
+            serta perjalanan saya di Instagram. 📸✨
+        </p>
+        <!-- INFO -->
+        <div class="info">
+            📸 Instagram
+            <br>
+            <span class="username">
+                @atiqurrohman401
+            </span>
+        </div>
+        <a
+            href="https://www.instagram.com/atiqurrohman401?stkn=aGtlZ2Jqd3Azam54"
+            class="btn-instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            📸 Buka Instagram
+        </a>
+        <!-- KEMBALI -->
+        <a
+            href="index.html"
+            class="kembali"
+        >
+            ← Kembali ke Portfolio
+        </a>
+        <!-- FOOTER -->
+        <footer>
+            © 2026 Atiqur Rohman
+        </footer>
+    </div>
 </body>
 </html>
+
