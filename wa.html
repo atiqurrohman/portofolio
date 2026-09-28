@@ -8,7 +8,145 @@
         content="width=device-width, initial-scale=1.0"
     >
     <title>WhatsApp - Atiqur Rahman</title>
+    <style><!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Saya - WhatsApp</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a1929, #0f2d2a);
+            color: #fff;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(10, 25, 47, 0.85);
+            border-radius: 20px;
+            padding: 40px 30px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0, 255, 170, 0.15);
+            border: 1px solid rgba(0, 255, 170, 0.2);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #00e599;
+            margin-bottom: 12px;
+            text-shadow: 0 0 10px rgba(0, 229, 153, 0.5);
+        }
+
+        .deskripsi {
+            color: #b0c4de;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .qrcode-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .qrcode {
+            width: 160px;
+            height: 160px;
+            background: #fff;
+            border-radius: 16px;
+            padding: 12px;
+            box-shadow: 0 0 20px rgba(0, 229, 153, 0.4);
+        }
+
+        .nama {
+            color: #e0e0e0;
+            font-size: 1.1rem;
+            margin: 10px 0 25px;
+        }
+
+        .btn-wa {
+            display: block;
+            text-decoration: none;
+            background: linear-gradient(90deg, #00c853, #00e599);
+            color: #fff;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-wa:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 200, 83, 0.3);
+        }
+
+        .nomor {
+            color: #b0c4de;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .kembali {
+            color: #8ab4f8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-bottom: 1px dashed transparent;
+            transition: border-bottom 0.3s;
+        }
+
+        .kembali:hover {
+            border-bottom: 1px dashed #8ab4f8;
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: #667788;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Hubungi Saya</h1>
+        <p class="deskripsi">Jika ingin menghubungi saya, silakan klik tombol/scan WhatsApp di bawah ini  👇.</p>
+
+        <div class="qrcode-box">
+            <!-- Ganti gambar QR Code dengan milikmu sendiri -->
+            <img src="scan.jpeg" alt="QR Code WhatsApp" class="qrcode">
+        </div>
+
+        <p style="color:#99ccbb; font-size:0.9rem;">📱 WhatsApp</p>
+        <p class="nama">Atiqur Rohman</p>
+
+        <a href="https://wa.me/6287819777046" target="_blank" class="btn-wa">
+            💬 Chat melalui WhatsApp
+        </a>
+
+        <p class="nomor">📞 +62 878-1977-7046</p>
+
+        <a href="#" class="kembali">← Kembali ke Portofolio</a>
+
+        <div class="footer">
+            © 2026 Atiqur Rohman
+        </div>
+    </div>
+</body>
+</html>
         * {
             margin: 0;
             padding: 0;
