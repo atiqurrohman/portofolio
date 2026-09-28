@@ -32,7 +32,32 @@
             box-shadow: 0 0 40px rgba(0, 255, 170, 0.15);
             border: 1px solid rgba(0, 255, 170, 0.2);
         }
+         
+        .whatsapp-icon {
+            width: 100px;
+            height: 100px;
+            margin:
+                0 auto 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #25d366,
+                    #128c7e
+                );
+            box-shadow:
+                0 0 25px
+                rgba(37, 211, 102, 0.45),
+                0 0 60px
+                rgba(37, 211, 102, 0.15);
+            animation:
+                mengambang 3s ease-in-out infinite;
 
+        }
         h1 {
             font-size: 2.2rem;
             color: #00e599;
@@ -46,7 +71,7 @@
             line-height: 1.6;
         }
 
-        .qrcode-box {
+        /* .qrcode-box {
             display: flex;
             justify-content: center;
             margin-bottom: 25px;
@@ -59,7 +84,7 @@
             border-radius: 16px;
             padding: 12px;
             box-shadow: 0 0 20px rgba(0, 229, 153, 0.4);
-        }
+        } */
 
         .nama {
             color: #e0e0e0;
@@ -111,15 +136,17 @@
     </style>
 </head>
 <body>
+    
     <div class="card">
+        <div class="card">
+        <!-- ICON -->
+        <div class="whatsapp-icon">
+            💬
+        </div>
         <h1>Hubungi Saya</h1>
         <p class="deskripsi">Jika ingin menghubungi saya, silakan klik tombol/scan WhatsApp di bawah ini  👇.</p>
 
-        <div class="qrcode-box">
-            <!-- Ganti gambar QR Code dengan milikmu sendiri -->
-            <img src="scan.jpeg" alt="QR Code WhatsApp" class="qrcode">
-        </div>
-
+        
         <p style="color:#99ccbb; font-size:0.9rem;">📱 WhatsApp</p>
         <p class="nama">Atiqur Rohman</p>
 
